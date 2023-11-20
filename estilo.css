@@ -1,0 +1,90 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #333;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Estilos del formulario de inicio de sesión */
+.login-form {
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.login-form h2 {
+  margin: 0 0 20px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form input[type="submit"] {
+  background-color: #0077dd;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilos para el carrusel */
+#carrusel-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#carrusel {
+  display: flex;
+  justify-content: center;
+  width: 29cm; /* Tamaño total del carrusel (3 imágenes de 9cm cada una + 2 veces la separación de 2cm) */
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+#carrusel img {
+  width: 9cm; /* Tamaño de las imágenes */
+  height: 9cm;
+  object-fit: cover;
+}
+
+#carrusel img:not(:last-child) {
+  margin-right: 2cm; /* Separación entre imágenes */
+}

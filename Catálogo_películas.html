@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Catálogo de Películas</title>
+</head>
+<body>
+  <h1>Catálogo de Películas "CineStream"</h1>
+  <h2>Explora nuestra selección de películas</h2>
+
+	<link rel="stylesheet" type="text/css" href="estilo_catalogo.css">
+	
+  <div class="menu-categorias">
+    <label for="categorias">Categoría:</label>
+    <select id="categorias" name="categorias">
+      <option value="estrenos">Estrenos</option>
+      <option value="accion">Acción</option>
+      <option value="ingles">Inglés</option>
+      <option value="espanol">Español</option>
+      <!-- Agrega más categorías según sea necesario -->
+    </select>
+  </div>
+
+  
+
+  <!-- Información de la película -->
+  <div class="informacion-pelicula">
+    <label for="actor">Actor:</label>
+    <input type="text" id="actor" name="actor" value="">
+    
+    <label for="director">Director:</label>
+    <input type="text" id="director" name="director" value="">
+    
+    <label for="lanzamiento">Año de lanzamiento:</label>
+    <input type="text" id="lanzamiento" name="lanzamiento" value="">
+    
+    <label for="pais">País:</label>
+    <input type="text" id="pais" name="pais" value="">
+    
+    <label for="actores-principales">Actores principales:</label>
+    <input type="text" id="actores-principales" name="actores-principales" value="">
+    
+    <label for="clasificacion">Clasificación:</label>
+    <input type="text" id="clasificacion" name="clasificacion" value="">
+    
+    <label for="imagen">Imagen:</label>
+    <input type="text" id="imagen" name="imagen" value="">
+  </div>
+
+  <!-- Contenido de la página, incluyendo las películas vistas si el checkbox está seleccionado -->
+	<div class="filtro-peliculas">
+	  <br>
+    <label for="peliculas-vistas">Películas vistas:</label>
+    <input type="checkbox" id="peliculas-vistas" name="peliculas-vistas">
+  </div>
+  <div id="peliculas-vistas-content" style="display: none;">
+    <h3>Películas Vistas</h3>
+    <ul>
+      <li>Película 1</li>
+      <li>Película 2</li>
+      <!-- Agrega más películas vistas aquí -->
+    </ul>
+  </div>
+
+  <script>
+    // JavaScript para mostrar u ocultar la sección de películas vistas cuando se cambia el estado del checkbox
+    const checkbox = document.getElementById("peliculas-vistas");
+    const peliculasVistasContent = document.getElementById("peliculas-vistas-content");
+
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        peliculasVistasContent.style.display = "block";
+      } else {
+        peliculasVistasContent.style.display = "none";
+      }
+    });
+  </script>
+	<Br>
+	  <Br>
+		  <Br>
+			  <Br>
+				  <Br>
+					  <Br>
+						  <Br>
+							  <Br>
+	<footer>
+  EAGG – PW1 – Noviembre/2023
+</footer>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/* estilo_catalogo.css */
+
+body {
+  background-color: #009688; /* Fondo verde */
+  text-align: center; /* Centrar el contenido en medio de la página */
+  margin: 0; /* Elimina el margen predeterminado del cuerpo */
+  padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+}
+
+h1, h2 {
+  color: #000; /* Títulos en negro */
+  font-weight: 600; /* Texto semibold */
+}
+
+.menu-categorias select {
+  background-color: #2196F3; /* Fondo azul del menú desplegable */
+  color: #000; /* Letras negras */
+  font-weight: bold; /* Texto en negrita */
+  width: auto; /* Ancho ajustado al contenido (largo de las letras) */
+  margin: 0 10px; /* Margen izquierdo y derecho para centrar el menú */
+  border: none; /* Elimina el borde del menú desplegable */
+  padding: 5px; /* Añade un poco de relleno para mejorar la apariencia */
+  border-radius: 5px; /* Agrega bordes redondeados */
+}
+
+.informacion-pelicula label {
+  display: block;
+  margin: 10px auto; /* Centro vertical y horizontalmente */
+  width: 25%; /* Ancho para centrar dos etiquetas juntas */
+  color: #000; /* Texto en negro */
+}
+
+.informacion-pelicula input {
+  width: 6cm; /* Ancho fijo de 6 cm para los campos de texto */
+  padding: 8px; /* Añade un poco de relleno para mejorar la apariencia */
+  border: 1px solid #000; /* Borde negro para los campos de texto */
+  border-radius: 5px; /* Agrega bordes redondeados */
+}
+
+#imagen {
+  width: 6cm;
+  height: 6cm;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%; /* Hace que la imagen sea circular si el tamaño es cuadrado */
+}
+
+/* Animación de fondo de pantalla */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700, #FFA500);
+  background-size: 400% 400%;
+  animation: gradientAnimation 1.5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

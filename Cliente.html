@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Bienvenido Estimado Cliente - CineStream</title>
+  <link rel="stylesheet" type="text/css" href="estilo_ingresar.css"> 
+
+  <style>
+    .mensaje-error {
+      color: red;
+    }
+  </style>
+
+  <script>
+    function validarFormulario() {
+      var nombre = document.getElementById('nombres').value;
+      var apellidoPaterno = document.getElementById('apellido_paterno').value;
+      var apellidoMaterno = document.getElementById('apellido_materno').value;
+      var curp = document.getElementById('curp').value;
+      var rfc = document.getElementById('rfc').value;
+      var inicioMembresia = document.getElementById('inicio_membresia').value;
+      var finMembresia = document.getElementById('fin_membresia').value;
+
+      var errores = [];
+
+      // Validar campos y agregar errores si es necesario
+      if (nombre.trim() === "") {
+        errores.push("Favor de llenar el campo Nombre(s).");
+        document.getElementById('error-nombres').innerText = "Favor de llenar el campo Nombre(s).";
+      } else {
+        document.getElementById('error-nombres').innerText = "";
+      }
+
+      if (apellidoPaterno.trim() === "") {
+        errores.push("Favor de llenar el campo Apellido Paterno.");
+        document.getElementById('error-apellido_paterno').innerText = "Favor de llenar el campo Apellido Paterno.";
+      } else {
+        document.getElementById('error-apellido_paterno').innerText = "";
+      }
+
+      if (apellidoMaterno.trim() === "") {
+        errores.push("Favor de llenar el campo Apellido Materno.");
+        document.getElementById('error-apellido_materno').innerText = "Favor de llenar el campo Apellido Materno.";
+      } else {
+        document.getElementById('error-apellido_materno').innerText = "";
+      }
+
+      if (curp.trim() === "") {
+        errores.push("Favor de llenar el campo CURP.");
+        document.getElementById('error-curp').innerText = "Favor de llenar el campo CURP.";
+      } else if (!/^[A-Za-z0-9]{18}$/.test(curp)) {
+        errores.push("El campo CURP debe tener una longitud exacta de 18 caracteres alfanuméricos.");
+        document.getElementById('error-curp').innerText = "El campo CURP debe tener una longitud exacta de 18 caracteres alfanuméricos.";
+      } else {
+        document.getElementById('error-curp').innerText = "";
+      }
+
+      if (rfc.trim() === "") {
+        errores.push("Favor de llenar el campo RFC.");
+        document.getElementById('error-rfc').innerText = "Favor de llenar el campo RFC.";
+      } else if (!/^[A-Za-z0-9]{13}$/.test(rfc)) {
+        errores.push("El campo RFC debe tener una longitud exacta de 13 caracteres alfanuméricos.");
+        document.getElementById('error-rfc').innerText = "El campo RFC debe tener una longitud exacta de 13 caracteres alfanuméricos.";
+      } else {
+        document.getElementById('error-rfc').innerText = "";
+      }
+
+      if (inicioMembresia.trim() === "") {
+        errores.push("Favor de llenar el campo Inicio de Membresía.");
+        document.getElementById('error-inicio_membresia').innerText = "Favor de llenar el campo Inicio de Membresía.";
+      } else if (!/^\d{4}-\d{2}-\d{2}$/.test(inicioMembresia)) {
+        errores.push("El campo Inicio de Membresía debe tener un formato de fecha válido (AAAA-MM-DD).");
+        document.getElementById('error-inicio_membresia').innerText = "El campo Inicio de Membresía debe tener un formato de fecha válido (AAAA-MM-DD).";
+      } else {
+        document.getElementById('error-inicio_membresia').innerText = "";
+      }
+
+      if (finMembresia.trim() === "") {
+        errores.push("Favor de llenar el campo Fin de Membresía.");
+        document.getElementById('error-fin_membresia').innerText = "Favor de llenar el campo Fin de Membresía.";
+      } else if (!/^\d{4}-\d{2}-\d{2}$/.test(finMembresia)) {
+        errores.push("El campo Fin de Membresía debe tener un formato de fecha válido (AAAA-MM-DD).");
+        document.getElementById('error-fin_membresia').innerText = "El campo Fin de Membresía debe tener un formato de fecha válido (AAAA-MM-DD).";
+      } else {
+        document.getElementById('error-fin_membresia').innerText = "";
+      }
+
+      // Mostrar mensajes de error si existen
+      if (errores.length > 0) {
+        return false;
+      }
+
+      // Redirigir al Catálogo de Películas si no hay errores
+      window.location.href = 'Catálogo_películas.html';
+
+      return false; // No enviar el formulario por defecto
+    }
+  </script>
+</head>
+<body>
+<br>
+<br>
+  <h1>"Bienvenido a CineStream, Estimado Cliente"</h1>
+  <p style="text-align: center; font-size: 2em;">Aquí encontrarás una amplia selección de películas para disfrutar.</p> 
+  <form method="post" action="procesar_formulario.php" onsubmit="return validarFormulario()">
+    <!-- Campos del formulario con mensajes desplegables -->
+    <label for="nombre(s)">Nombre(s):</label>
+    <input type="text" id="nombres" name="nombres" placeholder="Nombre(s)">
+    <span class="mensaje-error" id="error-nombres"></span>
+
+    <label for="apellido_paterno">Apellido Paterno:</label>
+    <input type="text" id="apellido_paterno" name="apellido_paterno" placeholder="Apellido Paterno">
+    <span class="mensaje-error" id="error-apellido_paterno"></span>
+
+    <label for="apellido_materno">Apellido Materno:</label>
+    <input type="text" id="apellido_materno" name="apellido_materno" placeholder="Apellido Materno">
+    <span class="mensaje-error" id="error-apellido_materno"></span>
+
+    <label for="curp">CURP (18 Dígitos):</label>
+    <input type="text" id="curp" name="curp" placeholder="18 Dígitos">
+    <span class="mensaje-error" id="error-curp"></span>
+
+    <label for="rfc">RFC (13 Dígitos):</label>
+ <input type="text" id="rfc" name="rfc" placeholder="13 Dígitos">
+    <span class="mensaje-error" id="error-rfc"></span>
+
+    <label for="tipo_membresia">Tipo de Membresía:</label>
+    <input type="text" id="tipo_membresia" name="tipo_membresia" placeholder="Tipo de Membresía">
+    <span class="mensaje-error" id="error-tipo_membresia"></span>
+
+    <label for="inicio_membresia">Inicio de Membresía:</label>
+    <input type="text" id="inicio_membresia" name="inicio_membresia" placeholder="AAAA-MM-DD">
+    <span class="mensaje-error" id="error-inicio_membresia"></span>
+
+    <label for="fin_membresia">Fin de Membresía:</label>
+    <input type="text" id="fin_membresia" name="fin_membresia" placeholder="AAAA-MM-DD">
+    <span class="mensaje-error" id="error-fin_membresia"></span>
+
+    <!-- Mostrar mensajes de error si existen -->
+    <span class="mensaje-error" id="error-tipo_membresia"></span>
+    <span class="mensaje-error" id="error-inicio_membresia"></span>
+    <span class="mensaje-error" id="error-fin_membresia"></span>
+
+    <!-- Redirigir al Catálogo de Películas si no hay errores -->
+    <input type="submit" value="Ir al Catálogo de Películas" class="submit-button">
+  </form>
+
+  <footer>
+    EAGG – PW1 – Noviembre/2023
+  </footer>
+</body>
+</html>

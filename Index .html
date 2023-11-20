@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>CineStream Streaming de películas en línea - Inicio de sesión</title>
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <!-- Incluye el script.js -->
+  <script src="assets_JS/script.js"></script>
+  <!-- Incluye el script_tam_imagenes.js -->
+  <script src="assets_JS/script_tam_imagenes.js"></script>
+  <!-- Incluye el script_datos_peliculas.js -->
+  <script src="assets_JS/script_datos_peliculas.js"></script>
+</head>
+
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Películas</a></li>
+      <li><a href="#">Series</a></li>
+      <li><a href="#">Mi cuenta</a></li>
+    </ul>
+  </nav>
+
+  <h1>Bienvenido a CineStream</h1>
+  <h2>Inicia sesión para disfrutar de películas en línea</h2>
+
+  <div class="login-form">
+    <h2>Iniciar sesión</h2>
+    <form id="loginForm" action="procesar_login.php" method="post">
+      <label for="username">Usuario:</label>
+      <input type="text" id="username" name="username" required>
+      
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" required>
+      
+      <input type="submit" value="Iniciar sesión">
+    </form>
+  </div>
+
+  <!-- Sección de "Estrenos" con Carrusel de imágenes -->
+  <div id="carrusel-container">
+    <h2>"Estrenos"</h2>
+    <div id="carrusel">
+      <!-- Imágenes del carrusel -->
+      <img src="assets_imágenes/Imagen_1.jpg" alt="Descripción de Imagen 1">
+      <img src="assets_imágenes/Imagen_2.jpg" alt="Descripción de Imagen 2">
+      <img src="assets_imágenes/Imagen_3.jpg" alt="Descripción de Imagen 3">
+      <img src="assets_imágenes/Imagen_4.jpg" alt="Descripción de Imagen 4">
+      <img src="assets_imágenes/Imagen_5.jpg" alt="Descripción de Imagen 5">
+    </div>
+  </div>
+
+  <!-- Resto del código HTML -->
+  
+  <footer>
+    EAGG – PW1 – Noviembre/2023
+  </footer>
+</body>
+</html>
